@@ -1,14 +1,92 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
 // Variables
 @import "variables";
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  background-color: #f2f2f2;
+  border-top: 4px solid #6dea5b;
+  font-family: 'Open Sans', sans-serif;
+}
 
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+#banner {
+  border-bottom: 4px solid #4699ba;
+}
+
+#logo {
+  margin-top: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+  border-top: 3px solid #989fa9;
+  padding-top: 10px;
+}
+
+.page-section {
+  padding: 15px;
+}
+
+#main-container {
+  background-color: whitesmoke;
+  border-top: 3px solid #4699ba;
+}
+
+#sidebar {
+  background-color: #e4e4e4;
+  border-right: 2px solid #b7b7b7;
+}
+
+#main-container {
+  margin-bottom: 8px;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+a#login {
+  color: #008000;
+  &:hover {
+    text-decoration: none;
+  }
 }
