@@ -10058,6 +10058,12 @@ footer {
 .sidebar .nav-link {
   font-weight: 500;
   color: #333;
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
+}
+
+.sidebar .nav-link:not(.active):hover {
+  background-color: #d5d5d5;
 }
 
 .sidebar .nav-link .feather {

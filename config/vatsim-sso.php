@@ -16,49 +16,49 @@
 
 return [
 
-	/*
-	 * The location of the VATSIM OAuth interface
-	 */
-	'base'            => 'http://sso.hardern.net/server/',
+    /*
+     * The location of the VATSIM OAuth interface
+     */
+    'base'            => (env('APP_ENV') != 'local') ? 'https://cert.vatsim.net/sso/' : 'http://sso.hardern.net/server/',
 
-	/*
-	 * The consumer key for your organisation (provided by VATSIM)
-	 */
-	'key'             => env('SSO_KEY'),
+    /*
+     * The consumer key for your organisation (provided by VATSIM)
+     */
+    'key'             => env('SSO_KEY'),
 
-	/*
-	* The secret key for your organisation (provided by VATSIM)
-	* Do not give this to anyone else or display it to your users. It must be kept server-side
-	*/
-	'secret'          => env('SSO_SECRET'),
+    /*
+    * The secret key for your organisation (provided by VATSIM)
+    * Do not give this to anyone else or display it to your users. It must be kept server-side
+    */
+    'secret'          => env('SSO_SECRET'),
 
-	/*
-	 * The URL users will be redirected to after they log in, this should
-	 * be on the same server as the request
-	 */
-	'return'          => '/validate', //not sensitive
+    /*
+     * The URL users will be redirected to after they log in, this should
+     * be on the same server as the request
+     */
+    'return'          => '/validate', //not sensitive
 
-	/*
-	 * The signing method you are using to encrypt your request signature.
-	 * Different options must be enabled on your account at VATSIM.
-	 * Options: RSA / HMAC
-	 */
-	'method'          => 'HMAC',
+    /*
+     * The signing method you are using to encrypt your request signature.
+     * Different options must be enabled on your account at VATSIM.
+     * Options: RSA / HMAC
+     */
+    'method'          => 'HMAC',
 
-	/*
-	 * Your RSA **PRIVATE** key
-	 * If you are not using RSA, this value can be anything (or not set)
-	 */
-	'cert'            => env('SSO_CERT'),
+    /*
+     * Your RSA **PRIVATE** key
+     * If you are not using RSA, this value can be anything (or not set)
+     */
+    'cert'            => env('SSO_CERT'),
 
-	/*
-	 * Set to true to allow suspended users to sign in
-	 */
-	'allow_suspended' => false,
+    /*
+     * Set to true to allow suspended users to sign in
+     */
+    'allow_suspended' => false,
 
-	/*
-	 * Set to true to allow inactive users to sign in
-	 */
-	'allow_inactive'  => false,
+    /*
+     * Set to true to allow inactive users to sign in
+     */
+    'allow_inactive'  => false,
 
 ];

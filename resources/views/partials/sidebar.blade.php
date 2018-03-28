@@ -1,6 +1,19 @@
 <nav>
     <div class="sidebar">
-        <p class="nav-item"><a href="#" id="login" class="nav-link"><strong><i class="fas fa-sign-in-alt"></i> Sign in</strong></a></p>
+        @guest
+            <p class="nav-item"><a href="#" id="login" class="nav-link"><strong><i class="fas fa-sign-in-alt"></i> Sign
+                        in</strong></a></p>
+        @endguest
+        @auth
+            <div class="card border-success mb-3" style="max-width: 18rem;">
+                <div class="card-header"><h5>Welcome, <strong>{{ Auth::user()->name }}</strong></h5></div>
+                <div class="card-body text-success">
+                    <h5 class="card-title">Success card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                </div>
+            </div>
+        @endauth
         <hr>
         <ul class="nav flex-column">
             <li class="nav-item">
