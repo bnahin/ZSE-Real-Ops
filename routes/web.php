@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('pages.main');
-});
+    return view('pages.home');
+})->name('home');
 
-Route::get('/login', 'LoginController@login');
+/** Login Routes */
+Route::get('/login', 'LoginController@login')->name('login');
 Route::get('/validate', 'LoginController@validateLogin');
+Route::get('/logout', 'LoginController@logout')->name('logout');
+
+/** Event Routes */
+Route::get('event/{event?}', 'EventController@index');

@@ -39,7 +39,7 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+        'mysql'   => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
@@ -52,6 +52,20 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+        ],
+        'mainweb' => [
+            'driver'      => 'mysql',
+            'host'        => env('DB_HOST', '127.0.0.1'),
+            'port'        => env('DB_PORT', '3306'),
+            'database'    => env('MAIN_DB_DATABASE', 'zseweb_new'),
+            'username'    => env('MAIN_DB_USERNAME', 'zseweb_new'),
+            'password'    => env('MAIN_DB_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset'     => 'utf8mb4',
+            'collation'   => 'utf8mb4_unicode_ci',
+            'prefix'      => '',
+            'strict'      => false,
+            'engine'      => null,
         ],
 
         'testing' => [

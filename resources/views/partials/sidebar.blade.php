@@ -1,17 +1,27 @@
 <nav>
     <div class="sidebar">
         @guest
-            <p class="nav-item"><a href="#" id="login" class="nav-link"><strong><i class="fas fa-sign-in-alt"></i> Sign
+            <p class="nav-item"><a href="{{ url('/login') }}" id="login" class="nav-link"><strong><i
+                            class="fas fa-sign-in-alt"></i> Sign
                         in</strong></a></p>
         @endguest
         @auth
-            <div class="card border-success mb-3" style="max-width: 18rem;">
-                <div class="card-header"><h5>Welcome, <strong>{{ Auth::user()->name }}</strong></h5></div>
-                <div class="card-body text-success">
-                    <h5 class="card-title">Success card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
+            <div class="card border-success mb-3">
+
+                <div class="card-header"><h5><i class="fas fa-user"></i> Welcome,
+                        <strong>{{ Auth::user()->getFullName() }}</strong></h5></div>
+
+                <div class="card-body">
+                    <p class="text-muted"><i class="fas fa-paper-plane"></i> <strong>Controller 1</strong>
+                        | {{-- Highest Endorsement --}} Center |
+                        Seattle ARTCC</p>
+                    <p class="text-muted"><i class="fas fa-plane"></i> Active Pilot <strong>P1</strong></p>
+                    <p class="text-success"><strong><i class="fa fa-cogs"></i> Full Admin</strong></p>
                 </div>
+
+                <div class="card-footer">
+                    <a style="color:#d20552;" href="{{ url('/logout') }}"><strong><i class="fas fa-sign-out-alt"></i>
+                            Log Out</strong></a></div>
             </div>
         @endauth
         <hr>
@@ -21,7 +31,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    Event Information
+                    Event Information and Booking
                 </a>
             </li>
             <li class="nav-item">
@@ -33,6 +43,11 @@
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
                 <span>Pilot Tools</span>
             </h6>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    Pilot Briefing & SOP
+                </a>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     My Bookings
