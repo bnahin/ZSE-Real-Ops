@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScheduleTable extends Migration
+class CreateSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateScheduleTable extends Migration
      */
     public function up()
     {
-        Schema::create('schedule', function (Blueprint $table) {
+        Schema::create('schedules', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('booking_id');
             $table->string('airline_ident');
             $table->string('airline_name');
             $table->string('callsign');
@@ -28,8 +27,6 @@ class CreateScheduleTable extends Migration
             $table->string('aircraft');
             $table->text('pref_route');
 
-            // Import CSV??
-
             $table->timestamps();
         });
     }
@@ -41,6 +38,6 @@ class CreateScheduleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('schedule');
+        Schema::dropIfExists('schedules');
     }
 }
