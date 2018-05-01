@@ -60,6 +60,20 @@ use Illuminate\Notifications\Notifiable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereShortDesc($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereStartDatetime($value)
  * @mixin \Eloquent
+ * @property int                 $event_id
+ * @property string              $event_desc
+ * @property string              $start_time
+ * @property string              $end_time
+ * @property string|null         $deleted_at
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereEndTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereEventDesc($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereEventId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereStartTime($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Event whereUpdatedAt($value)
  */
 class Event extends Model
 {

@@ -27,6 +27,8 @@ use Illuminate\Database\Eloquent\Model,
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Booking whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Booking whereVatsimId($value)
  * @mixin \Eloquent
+ * @property string $ref_id
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Booking whereRefId($value)
  */
 class Booking extends Model
 {

@@ -15,8 +15,8 @@
             <div class="card-body">
                 <h5 class="card-title">Spokane Showdown</h5>
                 <p class="card-text"><!--Get from ZSE database-->{{ Faker\Factory::create()->paragraphs(3,true) }}
-                    <br><br>{{Faker\Factory::create()->paragraphs(3,true)}}</p>
-                <a href="{{url('booking/3424ddkas')}}" class="btn btn-success">Book Now <i
+                    <br><br>{{ Faker\Factory::create()->paragraphs(3, true) }}</p>
+                <a href="{{url('event/3424ddkas')}}" class="btn btn-success">Book Now <i
                         class="fas fa-arrow-right"></i></a>
             </div>
             <br>

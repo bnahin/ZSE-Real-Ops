@@ -4,9 +4,9 @@ Main event view
 @extends('partials.master')
 
 @section('page-content')
-    @if(!$events)
+    @if(!$event)
         <div class="alert alert-danger">
-            <strong>Unable to load event.</strong>
+            <strong><i class="fas fa-exclamation-triangle"></i> Unable to load event.</strong>
         </div>
     @endif
 @endsection

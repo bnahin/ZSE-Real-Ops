@@ -16,12 +16,12 @@ class EventController extends Controller
      */
     public function index(Event $event = null)
     {
-        if (!$event) {
+        if (!is_null($event)) {
             $event = Event::firstUpcoming();
         }
 
         //Main event page, display closest event
-        return view('pages.main', compact($event));
+        return view('pages.main', compact('event'));
     }
 
     /**
@@ -49,13 +49,21 @@ class EventController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int $id
+     * @param \App\Event|null $event
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Event $event = null)
     {
         //Edit event (admins)
+        if (is_null($event)) {
+            //Show main edit events page
+            //Create new event button, list of events to edit
+
+            return view('admin.events.edit-main');
+        }
+
+        return view('admin.events.edit', compact('event'));
     }
 
     /**

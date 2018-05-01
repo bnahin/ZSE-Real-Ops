@@ -96,8 +96,25 @@ class User extends Authenticatable
         return self::isATC($this->vatsim_id);
     }
 
-    public function getFullName()
+    public function getFullNameAttribute()
     {
-        return $this->first_name . " " . $this->last_name;
+        return ucwords($this->first_name . " " . $this->last_name);
+    }
+
+    public function getFirstNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getLastNameAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function setFullNameAttribute($value)
+    {
+        $name = explode(' ', $value);
+        $this->attributes['first_name'] = ucfirst($name[0]);
+        $this->attributes['last_name'] = ucfirst($name[1]);
     }
 }

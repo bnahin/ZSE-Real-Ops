@@ -63,7 +63,6 @@ class LoginController extends Controller
                 Auth::login($userDb, true);
             } else {
                 $status = false;
-
             }
         });
 

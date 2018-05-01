@@ -7,7 +7,7 @@
 <header id="header">
 
     <div id="logo">
-        <img src="images/logo.png">
+        <img src="{{ url('images/logo.png') }}">
     </div>
 </header>
 <main>
